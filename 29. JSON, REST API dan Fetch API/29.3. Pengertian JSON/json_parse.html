@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Belajar JavaScript</h1>
+    <script>
+      let mahasiswaJSON = `{"nim":"18010245","nama":"Eka Putra",
+"jurusan":"Teknik Informatika","asalProvinsi":"DKI Jakarta"}`;
+      let mahasiswa = JSON.parse(mahasiswaJSON);
+      console.log(mahasiswa);
+      console.log(mahasiswa.nama);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+       const myFetch = async () => {
+let response = await fetch('https://reqres.in/api/users/1');
+let data = await response.json();
+let user = data.data;
+console.log(user.id); // 1
+console.log(user.first_name); // George
+console.log(user.last_name); // Bluth
+ console.log(user.email); // george.bluth@reqres.in
+ console.log(user.avatar); // https://reqres.in/img/faces/1-image.jpg
+ }
+
+ myFetch();
+
+ </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      const myFetch = async () => {
+        try {
+          let response = await fetch("https://reqres.in/api/users/1");
+          if (!response.ok) {
+            throw new Error(`Terjadi gangguan dengan kode: ${response.status}`);
+          }
+
+          let data = await response.json();
+          let user = data.data;
+
+          let displayUser = ``;
+          displayUser += `<ul>`;
+          displayUser += `<li>${user.id}</li>`;
+          displayUser += `<li>${user.first_name}</li>`;
+          displayUser += `<li>${user.last_name}</li>`;
+          displayUser += `<li>${user.email}</li>`;
+          displayUser += `<li>${user.avatar}</li>`;
+          displayUser += `</ul>`;
+
+          document.getElementById("container").innerHTML = displayUser;
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      myFetch();
+    </script>
+  </body>
+</html>
